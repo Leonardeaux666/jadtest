@@ -1,0 +1,23 @@
+spring:
+    datasource:
+        url: jdbc:oracle:thin:@140.238.183.58:1521:dbjaddev
+        username: fraction
+        password: rqdqeiad
+        driver-class-name: oracle.jdbc.OracleDriver
+        hikari:
+            maximumPoolSize: 3
+            maxLifetime: 600000
+            minimumIdle: 1
+            idleTimeout: 60000
+            connectionTimeout: 30000
+            poolName: frete_service_pool
+    jpa:
+        database-plataform: org.hibernate.dialect.Oracle12cDialect
+        show_sql: true
+        properties:
+            hibernate:
+                format_sql: true
+                proc:
+                    param_null_passing: true
+
+
