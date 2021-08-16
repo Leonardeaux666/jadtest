@@ -5,27 +5,17 @@
  */
 package com.jadlog.atualizacaomonetaria.service;
 
-<<<<<<< HEAD
-import com.jadlog.atualizacaomonetaria.entity.AtualizacaoMonetariaEntity;
-import com.jadlog.atualizacaomonetaria.repository.AtualizacaoMonetariaRepository;
-=======
+
 import com.jadlog.atualizacaomonetaria.entity.ConstCalcTarifAerea;
 import com.jadlog.atualizacaomonetaria.entity.InternMoedaCotacao;
 import com.jadlog.atualizacaomonetaria.entity.InternMoedaCotacaoPk;
->>>>>>> 74ab0f8 (Primeiro Commit)
+
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-<<<<<<< HEAD
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-=======
+
 import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -35,9 +25,10 @@ import com.jadlog.atualizacaomonetaria.entity.InterMoeda;
 import com.jadlog.atualizacaomonetaria.repository.AtualizacaoMonetariaRepository;
 import com.jadlog.atualizacaomonetaria.repository.ConstCalcTarifAereaRepository;
 import com.jadlog.atualizacaomonetaria.repository.InterMoedaRepository;
-import com.jadlog.exception.EntityNotFoundException;
+
+import javax.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
->>>>>>> 74ab0f8 (Primeiro Commit)
+
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -49,20 +40,15 @@ import org.xml.sax.SAXException;
  * @author leonardo.souza
  */
 @Service
-@NoArgsConstructor
 @AllArgsConstructor
 public class AtualizacaoMonetaria {
 
-<<<<<<< HEAD
-    @Autowired
-    private AtualizacaoMonetariaRepository repository;
-   
-=======
+
     private final AtualizacaoMonetariaRepository repository;
     private final InterMoedaRepository interMoedaRepository;
     private final ConstCalcTarifAereaRepository constCalcTarifAereaRepository;
 
->>>>>>> 74ab0f8 (Primeiro Commit)
+ 
     public void atualizar() throws ParserConfigurationException, SAXException, IOException{
                  
             DocumentBuilderFactory fabricaDolar = DocumentBuilderFactory.newInstance();
@@ -103,29 +89,7 @@ public class AtualizacaoMonetaria {
    
          
     public void saveDolar(Double dolar){
-<<<<<<< HEAD
-        AtualizacaoMonetariaEntity entityDolar = new AtualizacaoMonetariaEntity();
-        entityDolar.setId(3L);
-        entityDolar.setValor(dolar);
-        entityDolar.setDt(formatDate());
 
-        System.out.println(entityDolar.getId());
-        System.out.println(entityDolar.getValor());
-        System.out.println(entityDolar.getDt());
-        repository.save(entityDolar);
-    }
-    public void saveEuro(Double euro){
-        AtualizacaoMonetariaEntity entityEuro = new AtualizacaoMonetariaEntity();
-
-        entityEuro.setId(2L);
-        entityEuro.setValor(euro);
-        entityEuro.setDt(formatDate());
-
-
-        System.out.println(entityEuro.getId());
-        System.out.println(entityEuro.getValor());
-        System.out.println(entityEuro.getDt());
-=======
         InternMoedaCotacao entityDolar = new InternMoedaCotacao();
         InternMoedaCotacaoPk id = new InternMoedaCotacaoPk(getInterMoeda(3L).getId(), formatDate());
         entityDolar.setInternMoedaCotacaoPk(id);
@@ -136,7 +100,7 @@ public class AtualizacaoMonetaria {
      public void saveDolarAereo(Double dolar){
         ConstCalcTarifAerea entityDolarAereo = new ConstCalcTarifAerea();
         InternMoedaCotacaoPk id = new InternMoedaCotacaoPk(getInterMoeda(2L).getId(), formatDate());
-        entityDolarAereo.set(id);
+        /*entityDolarAereo.set(id);*/
         constCalcTarifAereaRepository.save(entityDolarAereo);
     }
 
@@ -145,7 +109,7 @@ public class AtualizacaoMonetaria {
         InternMoedaCotacaoPk id = new InternMoedaCotacaoPk(getInterMoeda(2L).getId(), formatDate());
         entityEuro.setInternMoedaCotacaoPk(id);
         entityEuro.setValor(euro);
->>>>>>> 74ab0f8 (Primeiro Commit)
+
         repository.save(entityEuro);
     }
     public static String formatDate(){
@@ -154,9 +118,7 @@ public class AtualizacaoMonetaria {
         String dataFormatada = dateFormat.format(dataEuro);
         return dataFormatada;
     }
-<<<<<<< HEAD
-}
-=======
+
 
     public InterMoeda getInterMoeda(Long id) {
         List<InterMoeda> interMoeda = interMoedaRepository.findAll();
@@ -165,4 +127,4 @@ public class AtualizacaoMonetaria {
         return moeda;
     }
 }
->>>>>>> 74ab0f8 (Primeiro Commit)
+

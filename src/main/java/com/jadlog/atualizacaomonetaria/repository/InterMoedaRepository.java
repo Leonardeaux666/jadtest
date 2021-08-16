@@ -5,16 +5,13 @@
  */
 package com.jadlog.atualizacaomonetaria.repository;
 
-import com.jadlog.atualizacaomonetaria.entity.InternMoedaCotacao;
+import com.jadlog.atualizacaomonetaria.entity.InterMoeda;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author leonardo.souza
  */
-@Repository
-
-public interface AtualizacaoMonetariaRepository extends JpaRepository<InternMoedaCotacao, Long>{
-
+public interface InterMoedaRepository extends JpaRepository<InterMoeda, Long> {
+    
 }
