@@ -6,25 +6,31 @@
 package com.jadlog.atualizacaomonetaria.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Embeddable;
 import lombok.Data;
 
 /**
  *
  * @author leonardo.souza
  */
-@Entity
+@Embeddable
 @Data
-@Table(name = "intern_moeda_cotacao")
-public class AtualizacaoMonetariaEntity implements Serializable {
-    @Id
-    @Column(name = "ID_INTER_MOEDA" )
+public class InternMoedaCotacaoPk implements Serializable {
+    @Column(name = "ID_INTERN_MOEDA")
     private Long id;
-    private Double valor;
     private String dt;
+
+    public InternMoedaCotacaoPk() {
+    }
+
+    
+    public InternMoedaCotacaoPk(Long id, String dt) {
+        this.id = id;
+        this.dt = dt;
+    }
+    
+    
+    
     
 }

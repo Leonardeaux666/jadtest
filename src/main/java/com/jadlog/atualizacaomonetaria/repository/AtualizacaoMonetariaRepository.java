@@ -5,7 +5,7 @@
  */
 package com.jadlog.atualizacaomonetaria.repository;
 
-import com.jadlog.atualizacaomonetaria.entity.AtualizacaoMonetariaEntity;
+import com.jadlog.atualizacaomonetaria.entity.InternMoedaCotacao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +14,10 @@ import org.springframework.stereotype.Repository;
  * @author leonardo.souza
  */
 @Repository
+<<<<<<< HEAD
 public interface AtualizacaoMonetariaRepository extends JpaRepository<AtualizacaoMonetariaEntity, Long>{
     
+=======
+public interface AtualizacaoMonetariaRepository extends JpaRepository<InternMoedaCotacao, Long>{
+>>>>>>> 74ab0f8 (Primeiro Commit)
 }

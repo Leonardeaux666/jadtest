@@ -2,8 +2,6 @@ package com.jadlog;
 
 import com.jadlog.atualizacaomonetaria.service.AtualizacaoMonetaria;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,5 +25,16 @@ public class AtualizacaoMonetariaApplication {
             Logger.getLogger(AtualizacaoMonetariaApplication.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+<<<<<<< HEAD
    
 }
+=======
+
+    private void initAtualizacao(AtualizacaoMonetariaRepository repository, InterMoedaRepository interMoedaRepository)
+            throws ParserConfigurationException, IOException, SAXException {
+        AtualizacaoMonetaria atualizacao = new AtualizacaoMonetaria(repository,interMoedaRepository);
+        atualizacao.atualizar();
+    }
+
+}
+>>>>>>> 74ab0f8 (Primeiro Commit)
